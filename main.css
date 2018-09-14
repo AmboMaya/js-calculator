@@ -4,10 +4,20 @@ body, html {
     text-align: center; 
     margin-top: 5%;
     background: #83a4d4;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 } 
+
+.container.calculator {
+    width: 390px;
+    height: 415px;
+    border: 3px solid white;
+    padding: 20px 8px;
+    margin-top:5%;
+    background: #373B44;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
 td.body{
     padding:0 3px 0 3px;
@@ -15,17 +25,6 @@ td.body{
     border: 0;
 }
 
-.container.calculator {
-    width: 390px;
-    height: 335px;
-    border: 3px solid white;
-    padding: 20px 8px;
-    margin-top:5%;
-    background: #373B44;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
 td.body input{
     text-transform: lowercase;
     color: white;
@@ -33,11 +32,15 @@ td.body input{
 }
 
 input.display{
-    margin-bottom: 3px;
-    margin-left:10px;
+    margin-bottom: 10px;
+    margin-left:5px;
     height: 50px;
     width: 350px;
 }
-th:last-child, td:last-child{
-    width: 83px;
+form{
+    width: 350px;
 }
+
+
+
+
