@@ -6,8 +6,8 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="main.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
-        <script src="calculator.js"></script>
+        <link rel="stylesheet" type="text/css" href="skeleton.css">
+        
     </head>
     <body>
         <div class="container">
@@ -26,56 +26,55 @@
                             <thead>
                                 <tr>
                                     <form name="form">
-                                    <input id="display" name="textview" class="u-full-width display">
-                                </form>
+                                        <input id="screen" name="textview" class="u-full-width display" disabled>
+                                    </form>
                                 </tr>
                             </thead>    
                             <tbody>
                                 <div class="row">
                                     <div class="five columns"> 
                                     <tr>
-                                        <td class="body"><input onclick="display(0)" id="zero" type='button' value="0"></td> 
-                                        <td class="body"><input onclick="display(1)" id="one" type='button' value="1"></td>
-                                        <td class="body"><input onclick="display(2)" id="two" type='button' value="2"></td>
-                                        <td class="body"><input onclick="clearVal()" id="clear" type='submit' value="c"></td>
+                                        <td class="body"><input class="number" type='button' data-number="0" value="0" onclick="show()"></td> 
+                                        <td class="body"><input class="number" type='button' data-number="1" value="1" onClick="show(0)"></td>
+                                        <td class="body"><input class="number" type='button' data-number="2" value="2" onClick="show(2)"></td>
+                                        <td class="body"><input id="clear"  type='button' value="c" onclick="clearVal()"></td>
                                     </tr>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="five columns">
                                     <tr>
-                                        <td class="body"><input onclick="display(3)" id="three"type='button' value="3"></td>
-                                        <td class="body"><input onclick="display(4)" id="four" type='button' value="4"></td>
-                                        <td class="body"><input onclick="display(5)" id="five" type='button' value="5"></td>
-                                        <td class="body"><input onclick="" id="add" type='submit' value="+"></td>
+                                        <td class="body"><input id="three" type='button' value="3"></td>
+                                        <td class="body"><input id="four" type='button' value="4"></td>
+                                        <td class="body"><input id="five" type='button' value="5"></td>
+                                        <td class="body"><input id="add" type='submit' value="+"></td>
                                     </tr> 
                                     </div>       
                                 </div>
                                 <div class="row">
                                     <div class="four columns">
                                     <tr>
-                                        <td class="body"><input onclick="display(6)" id="six" type='button' value="6"></td>
-                                        <td class="body"><input onclick="display(7)" id="seven" type='button' value="7"></td>
-                                        <td class="body"><input onclick="display(8)" id="eight" type='button' value="8"></td>
-                                        <td class="body"><input onclick="" id="multiply" type='button' value="x"></td>
+                                        <td class="body"><input id="six" type='button' value="6"></td>
+                                        <td class="body"><input id="seven" type='button' value="7"></td>
+                                        <td class="body"><input id="eight" type='button' value="8"></td>
+                                        <td class="body"><input id="multiply" type='button' value="x"></td>
                                     </tr>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="four columns">
                                     </tr>
-                                        <td class="body"><input onclick="display(9)" id="nine" type='button' value="9"></td>
-                                        <td class="body"><input onclick="display(10)" id="ten" type='button' value="10"></td>
-                                        <td class="body"><input onclick="" id="substract" type='button' value=" - "></td>
-                                        <td class="body"><input onclick="" id="divide" type='button' value="/"></td>
+                                        <td class="body"><input id="nine" type='button' value="9"></td>
+                                        <td class="body"><input id="decimal" type='button' value=" . "></td>
+                                        <td class="body"><input id="substract" type='button' value=" - "></td>
+                                        <td class="body"><input id="divide" type='button' value="/"></td>
                                     </tr>
                                     </div>
                                 </div>
                                 <div class="row">
                                         <div class="four columns">
                                         </tr>
-                                            <td colspan=3 class="body"><input id='equals' style="width:245px"onclick=""type='button' value="="></td>
-                                            <td class="body"><input id="decimal" type='button' value="."></td>
+                                            <td colspan=5 class="body"><input id='equals' style="width:320px"onclick=""type='button' value="="></td>
                                         </tr>
                                         </div>
                                     </div>
@@ -85,5 +84,6 @@
                 </div>
             </div> 
         </div>
+        <script src="calculator.js"></script>
     </body>
 </html> 
