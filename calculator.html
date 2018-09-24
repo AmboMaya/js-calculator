@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>
+  <title>calculator</title>
+  <style>
+    .calculator{
+        width: 450px;
+        height: 400px;
+        padding: 10px;
+        margin-left: 30%;
+        margin-top:100px;
+        
+    }
+
+    
+    button{
+        font-size: 1.5em;
+        width: 20%;
+        background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+        background: linear-gradient(to right, #4286f4, #373B44);
+    }
+    #display,#sum{
+        width: 378px;
+        height: 60px;
+        margin: 5px 0 5px 0; 
+        text-align: right;
+        font-weight: bold;
+        color: black;
+         
+    }
+    
+  </style>
+  
+</head>
+<body>
+    <div class="calculator">
+        <button id='display' disabled style="background:whitesmoke;border-color:gray;"></button>
+        <button class="number" onclick="inputDigit(0)">0</button>
+        <button class="number" onclick="inputDigit(1)">1</button>
+        <button class="number" onclick="inputDigit(2)">2</button>
+        <button class="number" onclick="inputDigit(3)">3</button>
+        <button class="number" onclick="inputDigit(4)">4</button>
+        <button class="number" onclick="inputDigit(5)">5</button>
+        <button class="number" onclick="inputDigit(6)">6</button>
+        <button class="number" onclick="inputDigit(7)">7</button>
+        <button class="number" onclick="inputDigit(8)">8</button>
+        <button class="number" onclick="inputDigit(9)">9</button>
+        <button class="operator" onclick="inputOperation('+')">+</button>
+        <button class="operator" onclick="inputOperation('*')">x</button>
+        <button class="operator" onclick="inputOperation('-')">-</button>
+        <button id="decidemal" onclick="">.</button>
+        <button class="operator" onclick="inputOperation('/')">/</button>
+        <button id="clear" onclick="resetAll()">c</button>
+        <button id="sum" onclick="('')" style="text-align:center;"> = </button>    
+    </div> 
+<script>
+    var inputVal = '';
+    var total = '0';
+    var currentOperation = '+';
+    refreshDisplay();
+    
+    function inputDigit(num) {
+        inputVal += num;
+        refreshDisplay(); 
+    
+    }
+                                                                                  
+    function inputOperation(operation) {
+        if (inputVal.length > 0) {
+        updateTotal();
+        clearInput();
+        currentOperation = operation;
+        refreshDisplay();
+        }
+    }
+
+    function updateTotal () {
+        switch (currentOperation){
+            case '+':
+                var temp = parseFloat(total) + parseFloat(inputVal);
+                total = temp.toString();
+                break;
+            case '-':
+                var temp = parseFloat(total) - parseFloat(inputVal);
+                total = temp.toString();
+                break;
+            case '*':
+                var temp = parseFloat(total) * parseFloat(inputVal);
+                total = temp.toString();
+                break;
+            case '/':
+                var temp = parseFloat(total) / parseFloat(inputVal);
+                total = temp.toString();
+                break;
+        } 
+    }
+
+    function clearInput() {
+        inputVal = '';
+    }
+
+    function refreshDisplay() {
+        if (inputVal.length > 0) {
+            document.getElementById('display').innerHTML = inputVal;    
+        } else {
+            document.getElementById('display').innerHTML = total;
+        }
+    }
+
+    function resetAll() {
+        document.getElementById('clear',location.reload())
+    }
+
+    
+</script>
+</body>
+</html>
