@@ -1,31 +1,14 @@
-var initialVal = 0;
-var inputVal = 0;
-var outputVal = 0;
+/* 
 
+calculator pseudo code:
 
-// It should display whatever number is clicked
-function display(num) {
-    document.form.textview.value = document.form.textview.value+num;   
-}
+1. It should have a variable for storing the current input value. Name variable inputVal
+2. Start at value zero
+3. It should have a variable for storing the current total
+4. It should have a variable for the current operator which can take action one at a time. If one operator is clicked right after the other, application will only action the last operator clicked. 
+5. It should have a display element to show any performed calculation :
+   - any keypad with class number clicked, it should display the number clicked
+   - display element is updated with the total amount when operator key is clicked 
+6. It should have 'clear' button to reset the value to 0
 
-// It should have 'clear' button to reset the value to 0
-function clearVal(){
-    document.form.textview.value = '';
-}
-
-// It should calculate (add, substract, multiply and divide) numbers
-function calculate (){
-    var a = document.querySelector('input').value;
-
-}
-
-/* Requirements:
- - Start at value zero
- - collect input data from user
- - rules: no zero digits as first value in a number, decimal can be use once in a row, only one operator can be use at once, 
- - display input on screen
- - perform calculation when use clicks equal '=' operator 
- - display result 
- - clear screen 
-
-// It should have input data storage to store input values
+*/
