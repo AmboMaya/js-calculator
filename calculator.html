@@ -1,106 +1,31 @@
 <!DOCTYPE html>
-<head>
-  <meta charset="utf-8">
-  <title>calculator</title>
-</head>
-<body>
-    <h1 style="text-align:center;">Sprint 8 - Basic calculator with JavaScript</h1>
-    <div class="calculator">
-        <button id='display' disabled style="background:whitesmoke;border-color:gray;"></button>
-        <button class="number" onclick="inputDigit(1)">1</button>
-        <button class="number" onclick="inputDigit(2)">2</button>
-        <button class="number" onclick="inputDigit(3)">3</button>
-        <button id="clear" onclick="resetAll()">c</button>
-        <button class="number" onclick="inputDigit(4)">4</button>
-        <button class="number" onclick="inputDigit(5)">5</button>
-        <button class="number" onclick="inputDigit(6)">6</button>
-        <button class="operator" onclick="inputOperation('+')">+</button>
-        <button class="number" onclick="inputDigit(7)">7</button>
-        <button class="number" onclick="inputDigit(8)">8</button>
-        <button class="number" onclick="inputDigit(9)">9</button>  
-        <button class="operator" onclick="inputOperation('*')">x</button>
-        <button class="number" onclick="inputDigit(0)">0</button>
-        <button id="decimal" onclick="inputDigit('.')">.</button>
-        <button class="operator" onclick="inputOperation('-')">-</button>
-        <button class="operator" onclick="inputOperation('/')">/</button>
-        <button id="sum" onclick="equal()" style="text-align:center;"> = </button>    
-    </div> 
-    <script>
-
-        var inputVal = '';
-        var total = '0';
-        var currentOperation = '+';
-        refreshDisplay();
-        
-        function inputDigit(num) {
-            inputVal += num;
-            var decimalPoint = function (){
-                if(num === "decimal") {
-                inputVal = inputVal + '.'
-                }
-            }
-            refreshDisplay(); 
-        }
-                                                                                    
-        function inputOperation(operation) {
-            if (inputVal.length > 0 && currentOperation !== "") {
-            updateTotal();
-            clearInput();
-            currentOperation = operation;
-            refreshDisplay();
-            }
-        }
-
-        function updateTotal () {
-            switch (currentOperation){
-                case '+':
-                    var temp = parseFloat(total) + parseFloat(inputVal);
-                    total = temp.toString();
-                    break;
-                case '-':
-                    var temp = parseFloat(total) - parseFloat(inputVal);
-                    total = temp.toString();
-                    break;
-                case '*':
-                    var temp = parseFloat(total) * parseFloat(inputVal);
-                    total = temp.toString();
-                    break;
-                case '/':
-                    var temp = parseFloat(total) / parseFloat(inputVal);
-                    total = temp.toString();
-                    break;
-            } 
-
-        }
-
-        function equal() {
-            if(inputVal.length > 0) {
-                updateTotal();
-                clearInput();
-                currentOperation = '';
-                refreshDisplay();
-            }
-
-        }
-
-        function clearInput() {
-            inputVal = '';
-        }
-
-        function refreshDisplay() {
-            if (inputVal.length > 0) {
-                document.getElementById('display').innerHTML = inputVal;    
-            } else {
-                document.getElementById('display').innerHTML = total;
-            }
-        }
-
-        function resetAll() {
-            inputVal='';
-            total='0';
-            currentOperation = '+';
-            refreshDisplay();
-        }
-    </script>
-</body>
+    <head>
+    <meta charset="utf-8">
+    <title>calculator</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="cal-version2.js"></script>
+    </head>
+    <body>
+        <h1 style="text-align:center;">Sprint 8 - Basic calculator with JavaScript</h1>
+        <div class="calculator">
+            <button id='display' disabled style="background:whitesmoke;border-color:gray;"></button>
+            <button class="number" onclick="inputDigit(1)">1</button>
+            <button class="number" onclick="inputDigit(2)">2</button>
+            <button class="number" onclick="inputDigit(3)">3</button>
+            <button id="clear" onclick="resetAll()">c</button>
+            <button class="number" onclick="inputDigit(4)">4</button>
+            <button class="number" onclick="inputDigit(5)">5</button>
+            <button class="number" onclick="inputDigit(6)">6</button>
+            <button class="operator" onclick="inputOperation('+')">+</button>
+            <button class="number" onclick="inputDigit(7)">7</button>
+            <button class="number" onclick="inputDigit(8)">8</button>
+            <button class="number" onclick="inputDigit(9)">9</button>  
+            <button class="operator" onclick="inputOperation('*')">x</button>
+            <button class="number" onclick="inputDigit(0)">0</button>
+            <button id="decimal" onclick="inputDigit('.')">.</button>
+            <button class="operator" onclick="inputOperation('-')">-</button>
+            <button class="operator" onclick="inputOperation('/')">/</button>
+            <button id="sum" onclick="equal()" style="text-align:center;"> = </button>    
+        </div> 
+    </body>
 </html>
